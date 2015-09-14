@@ -11,6 +11,9 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
 
+import game.input.KeyHandler;
+import game.input.MouseHandler;
+import game.input.MouseMotionHandler;
 import game.state.GameStateManager;
 import game.state.GameStateManager.GameState;
 
@@ -57,6 +60,11 @@ public class Game extends Canvas implements Runnable {
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+		
+		// Input
+		addKeyListener(new KeyHandler());
+		addMouseListener(new MouseHandler());
+		addMouseMotionListener(new MouseMotionHandler());
 	}
 
 	/**
